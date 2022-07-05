@@ -14,12 +14,12 @@ public class ResponseTimesOverTimeGui
      */
     public ResponseTimesOverTimeGui() {
         super();
-        graphPanel.getGraphObject().setYAxisLabel("Response times in ms");
+        graphPanel.getGraphObject().setYAxisLabel("响应时间-毫秒");
     }
 
     private void addThreadGroupRecord(String threadGroupName, long time,
             long numThreads) {
-        String labelAgg = "Overall Response Times";
+        String labelAgg = "总体响应时间";
         AbstractGraphRow row = model.get(threadGroupName);
         AbstractGraphRow rowAgg = modelAggregate.get(labelAgg);
         if (row == null) {
@@ -39,7 +39,7 @@ public class ResponseTimesOverTimeGui
 
     @Override
     public String getStaticLabel() {
-        return JMeterPluginsUtils.prefixLabel("Response Times Over Time");
+        return JMeterPluginsUtils.prefixLabel("单位时间内平均响应时间RTOT");
     }
 
     @Override

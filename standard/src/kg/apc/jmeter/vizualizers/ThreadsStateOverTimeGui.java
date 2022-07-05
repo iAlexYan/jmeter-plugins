@@ -23,7 +23,7 @@ public class ThreadsStateOverTimeGui
      */
     public ThreadsStateOverTimeGui() {
         super();
-        graphPanel.getGraphObject().setYAxisLabel("Number of active threads");
+        graphPanel.getGraphObject().setYAxisLabel("活动线程数");
     }
 
     @Override
@@ -70,7 +70,7 @@ public class ThreadsStateOverTimeGui
     }
 
     private void addThreadGroupRecord(String threadGroupName, long time, int numThreads, long duration) {
-        String labelAgg = "Overall Active Threads";
+        String labelAgg = "总体活动线程";
         AbstractGraphRow row = model.get(threadGroupName);
         AbstractGraphRow rowAgg = modelAggregate.get(labelAgg);
 
@@ -112,7 +112,7 @@ public class ThreadsStateOverTimeGui
 
     @Override
     public String getStaticLabel() {
-        return JMeterPluginsUtils.prefixLabel("Active Threads Over Time");
+        return JMeterPluginsUtils.prefixLabel("单位时间内活动线程数TSOT");
     }
 
     @Override
