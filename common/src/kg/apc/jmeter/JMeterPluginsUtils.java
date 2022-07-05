@@ -202,7 +202,7 @@ public abstract class JMeterPluginsUtils {
         JLabel icon = new JLabel();
         icon.setIcon(new javax.swing.ImageIcon(JMeterPluginsUtils.class.getResource("/kg/apc/jmeter/vizualizers/information.png")));
 
-        JLabel link = new JLabel("Help on this plugin");
+        JLabel link = new JLabel("有关此插件的帮助");
         link.setForeground(Color.blue);
         link.setFont(link.getFont().deriveFont(Font.PLAIN));
         link.setCursor(new Cursor(Cursor.HAND_CURSOR));
