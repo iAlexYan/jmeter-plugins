@@ -148,7 +148,7 @@ public abstract class AbstractGraphPanelVisualizer
         maximizeButton = new JButton(new javax.swing.ImageIcon(getClass().getResource("/kg/apc/jmeter/img/maximize.png")));
         maximizeButton.setFocusable(false);
         maximizeButton.setPreferredSize(new java.awt.Dimension(20, 20));
-        maximizeButton.setToolTipText("Maximize Panel");
+        maximizeButton.setToolTipText("最大化窗口");
 
         maximizeButton.addActionListener(new MaximizeAction());
 
@@ -615,10 +615,10 @@ public abstract class AbstractGraphPanelVisualizer
             toogleMaximize();
             if (!maximized) {
                 maximizeButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/kg/apc/jmeter/img/maximize.png")));
-                maximizeButton.setToolTipText("Maximize Panel");
+                maximizeButton.setToolTipText("最大化窗口");
             } else {
                 maximizeButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/kg/apc/jmeter/img/restore.png")));
-                maximizeButton.setToolTipText("Restore Panel");
+                maximizeButton.setToolTipText("恢复窗口");
             }
         }
 

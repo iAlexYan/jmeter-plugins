@@ -68,7 +68,7 @@ public class PerfMonGui
     public PerfMonGui() {
         super();
         setGranulation(1000);
-        graphPanel.getGraphObject().setYAxisLabel("Performance Metrics");
+        graphPanel.getGraphObject().setYAxisLabel("性能矩阵");
         graphPanel.getGraphObject().getChartSettings().setExpendRows(true);
     }
 
@@ -95,7 +95,7 @@ public class PerfMonGui
 
     @Override
     public String getStaticLabel() {
-        return JMeterPluginsUtils.prefixLabel("PerfMon Metrics Collector");
+        return JMeterPluginsUtils.prefixLabel("性能监控PMMC");
     }
 
     @Override
@@ -133,7 +133,7 @@ public class PerfMonGui
         if (errorTextArea.getText().length() != 0) {
             newLine = "\n";
         }
-        errorTextArea.setText(errorTextArea.getText() + newLine + formatter.format(time) + " - ERROR: " + msg);
+        errorTextArea.setText(errorTextArea.getText() + newLine + formatter.format(time) + " - 错误: " + msg);
         errorTextArea.setCaretPosition(errorTextArea.getDocument().getLength());
         updateGui();
     }
@@ -145,7 +145,7 @@ public class PerfMonGui
 
     private void registerPopup() {
         JPopupMenu popup = new JPopupMenu();
-        JMenuItem hideMessagesMenu = new JMenuItem("Hide Error Panel");
+        JMenuItem hideMessagesMenu = new JMenuItem("隐藏错误窗口");
         hideMessagesMenu.addActionListener(new HideAction());
         popup.add(hideMessagesMenu);
         errorTextArea.setComponentPopupMenu(popup);
@@ -159,7 +159,7 @@ public class PerfMonGui
 
     private Component createConnectionsPanel() {
         JPanel panel = new JPanel(new BorderLayout(5, 5));
-        panel.setBorder(BorderFactory.createTitledBorder("Servers to Monitor (ServerAgent must be started, see help)"));
+        panel.setBorder(BorderFactory.createTitledBorder("要监视的服务器（必须启动服务器代理，请参阅帮助）"));
         panel.setPreferredSize(new Dimension(150, 150));
 
         JScrollPane scroll = new JScrollPane(createGrid());
@@ -188,7 +188,7 @@ public class PerfMonGui
 
                     JPerfmonParamsPanel dlgContent = new JPerfmonParamsPanel(type, wizEditor);
                     dlgContent.setMinWidth(400);
-                    JDialog dlg = DialogFactory.getJDialogInstance(parent, "PerfMon [" + type + "] Parameters Helper",
+                    JDialog dlg = DialogFactory.getJDialogInstance(parent, "性能监控 [" + type + "] 参数帮助",
                             true, dlgContent, "/kg/apc/jmeter/vizualizers/wand.png");
 
                     DialogFactory.centerDialog(parent, dlg);

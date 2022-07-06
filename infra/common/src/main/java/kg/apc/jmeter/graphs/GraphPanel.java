@@ -42,7 +42,7 @@ public class GraphPanel
         rowsTab = new JRowsSelectorPanel(this);
         rowsTab.setTable(makeTable(rowsTab));
 
-        addTab("Rows", rowsIcon, rowsTab, "Select rows to display");
+        addTab("表格", rowsIcon, rowsTab, "选择要显示的行");
     }
 
     /**
@@ -62,7 +62,7 @@ public class GraphPanel
     private void addOptionsTab() {
         ImageIcon icon = createImageIcon("/kg/apc/jmeter/img/settings.png");
         settingsTab = new JPanel(new BorderLayout());
-        addTab("Settings", icon, settingsTab, "Chart plot settings");
+        addTab("设置", icon, settingsTab, "图表绘制设置");
     }
 
     private Component makeTable(JRowsSelectorPanel rowsTab) {
@@ -83,7 +83,7 @@ public class GraphPanel
         graphPanelObject.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.LOWERED));
         JGraphPanel graphTab = new JGraphPanel();
         graphTab.add(graphPanelObject, BorderLayout.CENTER);
-        addTab("Chart", graphIcon, graphTab, "View chart");
+        addTab("图表", graphIcon, graphTab, "查看图表");
     }
 
     /**

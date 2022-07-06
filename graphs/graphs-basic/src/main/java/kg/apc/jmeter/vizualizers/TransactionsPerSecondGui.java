@@ -13,13 +13,13 @@ public class TransactionsPerSecondGui
     /**
      *
      */
-    private static String labelAggSuccess = "Successful Transactions per Second";
-    private static String labelAggFailure = "Failed Transactions per Second";
+    private static String labelAggSuccess = "成功TPS";
+    private static String labelAggFailure = "失败TPS";
 
     public TransactionsPerSecondGui() {
         super();
         setGranulation(1000);
-        graphPanel.getGraphObject().setYAxisLabel("Number of transactions /sec");
+        graphPanel.getGraphObject().setYAxisLabel("事务数量 /秒");
     }
 
     private void addTransaction(boolean isSuccess, String rowName, long time, double count) {
@@ -27,10 +27,10 @@ public class TransactionsPerSecondGui
         String rowAggName;
 
         if (isSuccess) {
-            realRowName = rowName + " (success)";
+            realRowName = rowName + " (成功)";
             rowAggName = labelAggSuccess;
         } else {
-            realRowName = rowName + " (failure)";
+            realRowName = rowName + " (失败)";
             rowAggName = labelAggFailure;
         }
 
@@ -68,7 +68,7 @@ public class TransactionsPerSecondGui
 
     @Override
     public String getStaticLabel() {
-        return JMeterPluginsUtils.prefixLabel("Transactions per Second");
+        return JMeterPluginsUtils.prefixLabel("每秒事务处理量TPS");
     }
 
     @Override
